@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nadownbad e</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+       body {
+            font-family: 'Arial', sans-serif;
+            margin-top: 20px;
+            background-color: #f4f4f9;
+        }
+        .script-font {
+            font-family: 'Dancing Script', cursive;
+            color: #595959;
+        }
+        .custom-header {
+            font-family: Arial, sans-serif;
+            font-size: 55px;
+            color: #595959;
+            font-weight: 900;
+        }
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .nav-item {
+            font-size: 20px;
+        }
+        .nav-link {
+            color: gray; /* Set the nav link color to gray */
+        }
+        .nav-link:hover {
+            color: darkgray; /* Optional: Change color on hover */
+        }
+        h1, p {
+            font-family: 'Hind', sans-serif;
+        }
+        p {
+            text-indent: 50px;
+        }
+        h1 {
+            font-weight: 200;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            transition: transform 2s;
+            z-index: 1;
+            cursor: pointer; /* Make the heart clickable */
+        }
+        .heart > img {
+            width: 50px;
+            height: auto;
+        }
+        .message {
+            padding: 20px;
+            background-color: #eee;
+            min-width: 400px;
+            max-height: 75%; /* Set a maximum height */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            overflow-y: auto; /* Enable vertical scrolling */
+            animation-name: openmsg;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: paused;
+            animation-fill-mode: forwards;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            border-radius: 5px;
+        }
+        .heart > img:hover {
+            animation-name: beat;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        @keyframes beat {
+            0% { width: 50px; }
+            25% { width: 58px; }
+            30% { width: 50px; }
+            50% { width: 45px; }
+            60% { width: 50px; }
+            75% { width: 58px; }
+            100% { width: 50px; }
+        }
+        @keyframes openmsg {
+            0% { height: 0px; padding: 0px 20px; }
+            100% { height: 75%; padding: 20px 20px; }
+        }
+        .openNor {
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+        .closeNor {
+            animation-direction: reverse;
+            animation-play-state: running;
+        }
+        .no-anim {
+            animation: none;
+        }
+        .closed {
+            height: 0px;
+            padding: 0px 20px;
+        }
+        .bottom {
+            bottom: 5px;
+        }
+        .openHer {
+            animation-name: heartMove;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: running;
+            animation-fill-mode: forwards;
+        }
+        .closeHer {
+            animation-name: heartMove;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-play-state: running;
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+        }
+        @keyframes heartMove {
+            0% { top: 50%; }
+            100% { top: 85%; transform: translate(-50%, 0); }
+        }
+    </style>
+</head>
+<body class="bg-white text-dark">
+    <div class="container py-2">
+        <header class="text-center mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="text-start fw-bold" style="font-size: 1rem; font-weight: 600; color: #595959;">BY. IYA</h1>
+                <div></div> <!-- Empty div to balance the flex layout -->
+            </div>
+            <h2 class="custom-header mt-2">HELLO, RIRI!</h2>
+            <nav class="mt-4">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="second.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="third.html">Guess</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fourth.html">Ria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fifth.html">For u</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <label for="messageState">
+            <div class="heart">
+                <img src="https://raw.githubusercontent.com/DzarelDeveloper/Img/main/Lope.png" alt="Heart">
+            </div>
+        </label>
+        <input id="messageState" type="checkbox" style="display:none">
+        <div class="message">
+            <h1>Haiii, Riri!</h1> 
+            <p>
+                Honestly, I never expected na our paths would cross, and yet here we are. It’s funny kasi nasa school ako that time, then suddenly, I met someone like you. 
+                Not gonna lie, when we first started talking, I really didn’t expect na tatagal ‘to. Especially when you said na you ghost people when you find something off about them napaisip ako, "Okay, let’s see how long this lasts." But somehow, here we are, still talking, and honestly, I wouldn’t have it any other way.
+                I super appreciate our convos kahit ‘yung mga wala lang, or kahit ‘yung mga times na parang we’re both just bored about life. I don’t know if that’s the right term, pero bare with it. It’s rare to find someone na you can be real with, no pretensions, no awkwardness. I don’t know if you notice it, but you really made me feel better when you said na I should just be me. You made me feel more comfortable, and I really, really appreciate that.
+                Also, if ever dumating sa point na I’m being annoying or making you feel uncomfy, please just tell me straight. I’d rather hear it upfront than unknowingly overstep. I respect you, and I never want to be that person na magiging pabigat or too much.
+                And just so you know—life can get tough sometimes, and when it does, I just want to remind you that you don’t have to go through it alone. You have someone to lean on when things get heavy and someone to hold onto when you feel like giving up. No pressure, no expectations, just letting you know that I’m here.
+                I don’t wanna rush anything or make things complicated, but if there’s one thing I’m sure of, it’s that I look forward to more conversations with you. More late-night kwentos, more random stories, more moments, kahit gaano ka-random or gaano ka simple. No expectations, no pressure, just me appreciating you for who you are.
+                So ayun, I just wanted to say thank you! thank you for existing, for being you, for being someone I never expected to meet but am really, really glad I did.
+            </p> 
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#messageState").on("change", (x) => {
+            $(".message").removeClass("openNor").removeClass("closeNor");
+            if ($("#messageState").is(":checked")) {
+                $(".message").removeClass("closed").removeClass("no-anim").addClass("openNor");
+                $(".heart").removeClass("closeHer").addClass("openHer");
+                $(".heart").css("top", "85%"); // Move heart down when opened
+                $(".container").stop().animate({"backgroundColor": "#f48fb1"}, 2000);
+                console.log("I Like You");
+            } else {
+                $(".message").removeClass("no-anim").addClass("closeNor");
+                $(".heart").removeClass("openHer").addClass("closeHer");
+                $(".heart").css("top", "50%"); // Move heart back to center when closed
+                $(".container").stop().animate({"backgroundColor": "#fce4ec"}, 2000);
+                console.log("01010");
+            }
+        });
+
+        $(".message").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+            if ($(".message").hasClass("closeNor"))
+                $(".message").addClass("closed");
+            $(".message").removeClass("openNor").removeClass("closeNor").addClass("no-anim");
+        });
+
+        $(".heart").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+            if (!$(".heart").hasClass("closeHer"))
+                $(".heart").addClass("openedHer").addClass("beating");
+            else
+                $(".heart").addClass("no-anim").removeClass("beating");
+            $(".heart").removeClass("openHer").removeClass("closeHer");
+        });
+    </script>
+</body>
+</html>

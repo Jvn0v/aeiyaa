@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aeiya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh; /* Full height of the viewport */
+            background-color: #f4f4f9;
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        
+            margin-top: 10px;
+            padding: 10px; /* Adjust as needed */
+        }
+
+        
+        .script-font {
+            font-family: 'Dancing Script', cursive;
+            color: #595959;
+        }
+        .custom-header {
+            font-family: Arial, sans-serif;
+            font-size: 55px;
+            color: #595959;
+            font-weight: 900;
+        }
+        .custom-header::after {
+            margin-top: 10px;
+            padding: 10px; /* Adjust as needed */
+        }
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .nav-item {
+            font-size: 20px;
+        }
+        .nav-link {
+            color: gray; /* Set the nav link color to gray */
+        }
+        .nav-link:hover {
+            color: darkgray; /* Optional: Change color on hover */
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center; /* Center text */
+        }
+        .gif {
+            height: 300px; /* Set a medium size for the GIF */
+            width: auto; /* Maintain aspect ratio */
+            margin: 20px 0; /* Add some margin */
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #90131b;
+            margin: 15px 0;
+        }
+        .btn-group {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        button {
+            position: relative;
+            width: 150px;
+            height: inherit;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px gray;
+            border: 2px solid #90131b;
+            font-size: 1.2em;
+        }
+        button:nth-child(1) {
+            background: #90131b;
+        }
+        button:nth-child(2) {
+            background: white;
+            color: #90131b;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-dark">
+    <div class="container">
+        <header class="text-center mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="text-start fw-bold" style="font-size: 1rem; font-weight: 600; color: #595959;">BY. IYA</h1>
+                <div></div> <!-- Empty div to balance the flex layout -->
+            </div>
+            <h2 class="custom-header mt-2">HELLO, RIRI!</h2>
+            <nav class="mt-4">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="second.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="third.html">Guess</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </header>
+
+        <div class="wrapper">
+            <h2 class="question">So ano nga itatawag mo sakin?</h2>
+            <img class="gif" alt="gif" src="https://media.giphy.com/media/9J1zU4zNFijo4iLjl5/giphy.gif?cid=790b76111c3vprd8w89j6nok7qzvk7jhftg2flopsr8mgrmx&ep=v1_gifs_search&rid=giphy.gif&ct=g"/>
+            <div class="btn-group">
+                <button class="yes-btn">Baby</button>
+                <button class="no-btn">Iya</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const yesBtn = document.querySelector(".yes-btn");
+        const noBtn = document.querySelector(".no-btn");
+        const question = document.querySelector(".question");
+        const gif = document.querySelector(".gif");
+
+        yesBtn.addEventListener("click", () => {
+            question.innerHTML = "Sabi na eh AHHAAHHAHAHAH";
+            gif.src = "https://media.giphy.com/media/2UxTW1Q2Vzh0NFelQ5/giphy.gif?cid=790b76111c3vprd8w89j6nok7qzvk7jhftg2flopsr8mgrmx&ep=v1_gifs_search&rid=giphy.gif&ct=g";
+            setTimeout(() => {
+                window.location.href = "fourth.html"; // Redirect to another HTML page after 3 seconds
+            }, 3000);
+        });
+
+        noBtn.addEventListener("mouseover", () => {
+            const noBtnRect = noBtn.getBoundingClientRect();
+            const maxX = window.innerWidth - noBtnRect.width - 20; // Subtract button width and some margin
+            const maxY = window.innerHeight - noBtnRect.height - 20; // Subtract button height and some margin
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        });
+    </script>
+</body>
+
+</html>
+
